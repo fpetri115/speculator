@@ -551,6 +551,8 @@ class Photulator(tf.keras.Model):
         # super
         super(Photulator, self).__init__()
         
+        print("MODIFIED!!", flush=True)
+
         # restore
         if restore is True:
             self.restore(restore_filename)
@@ -718,6 +720,7 @@ class Photulator(tf.keras.Model):
 
     @tf.function
     def compute_loss(self, theta, mags):
+        print("MODIFIED MODEL", flush=True)
 
         return tf.sqrt(tf.reduce_mean(tf.math.squared_difference(self.call(theta), mags)))      
 
